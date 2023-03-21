@@ -1,40 +1,87 @@
-import React, { useState } from 'react';
 import './App.css'
-import InputControlled from './assets/components/inputControlled'
 import ProductsForm from './assets/components/ProductsForm';
 import ProductsList from './assets/components/ProductsList';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import ConfDelete from './assets/components/ConfDelete';
 
 function App() {
+    const [prodUpdate, setProdUpdate] = useState(null)
+    const [products, setProducts] = useState([])
+    const [swForm, setSwForm] = useState(false)
+    const [swConfDelete, setSwConfDelete] = useState(false)
+    const [prodDele, setProdDele] = useState("")
 
+    useEffect(() => {
+        getData()
+    }, [])
+
+    const getData = () => {
+        axios
+            .get("https://products-crud.academlo.tech/products/")
+            .then(resp => setProducts(resp.data))
+            .catch(error => console.error(error))
+    }
     // READ
-    const [products, setProducts ] = useState([{
-        name: "Martillo",
-        category: "Ferreteria",
-        price: 5,
-        isAvailable: true,
-        id:1
-    }])
 
     // CREATE
     const addProd = (data) => {
-        setProducts([ ...products, data])
+        axios
+            .post("https://products-crud.academlo.tech/products/", data)
+            .then(() => getData())
+            .catch(error => console.error(error))
     }
 
     // DELETE
     const deleProd = (id) => {
-        const filterProduct = products.filter( prod => prod.id != id)
-        setProducts(filterProduct)
+        axios
+            .delete(`https://products-crud.academlo.tech/products/${id}/`)
+            .then(() => getData())
+            .catch(error => console.error(error))
+        setProdUpdate(null)
     }
+
+    const selesctProd = (products) => {
+        setProdUpdate(products)
+    }
+
+    // UPDATE
+    const prodActualization = data => {
+        axios
+            .put(`https://products-crud.academlo.tech/products/${data.id}/`, data)
+            .then(() => {
+                getData()
+                setProdUpdate(null)
+            })
+            .catch(error => console.error(error))
+    }
+
     return (
         <div className="App">
-            {/* <InputControlled /> */}
-            <ProductsForm
-            createProduc={(data)=> addProd(data)}
-            />
+            {
+                swForm &&
+                <ProductsForm
+                    createProduc={(data) => addProd(data)}
+                    selectedProd={prodUpdate}
+                    updateProd={data => prodActualization(data)}
+                    // setSwForm={swForm}
+                    setSwFormApp={sw => setSwForm(sw)}
+                />
+            }
             <ProductsList
-            products={products}
-            deleProduct={id =>deleProd(id)}
+                products={products}
+                setSwFormListApp={sw => setSwForm(sw)}
+                selesctProd={(sw, products) => { setSwForm(sw), selesctProd(products) }}
+                setSwConfDeleListApp={(sw, product) => { setSwConfDelete(sw), setProdDele(product)}}
             />
+            {
+                swConfDelete &&
+                <ConfDelete
+                    prodDele={prodDele}
+                    deleProduct={(id, sw) => { deleProd(id), setSwConfDelete(sw) }}
+                    cancelDele={sw => setSwConfDelete(sw)}
+                />
+            }
         </div>
     )
 }

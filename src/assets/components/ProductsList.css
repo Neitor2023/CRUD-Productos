@@ -1,4 +1,91 @@
 *{
+    width: 100%;
+}
+
+.sumary{
+    border: 1px solid ;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+h1{
+    width: 100%;
+    text-align: center;
+}
+
+h2{
+    width: 100%;
+    text-align: center;
+}
+
+.sumary button{
+    width: 160px;
+    height: 40px;
+    background-color: #565a8a;
+    color: antiquewhite;
+    box-shadow: 0 0 3px 3px gray;
+    border-radius: 5px;
+}
+
+.sumary button:hover{
+    cursor: pointer;
+    background-color: antiquewhite;
+    color: rgb(2, 2, 26);
+}
+
+.card_list{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-evenly;
+    background-color: white;
+    padding: 3rem 0;
+}
+
+.card{
+    width: 220px;
+    height: 200px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0 0 3px 3px rgb(206, 206, 206);
+    border-radius: 10px;
+}
+.sub_car{
+    display: flex;
+    flex-direction: row;
+}
+.btn_list{
+    width: 50px;
+    /* display: flex; */
+    /* flex-direction:column; */
+    /* flex-wrap: wrap; */
+}
+.det_list{
+    list-style-type: none;
+}
+.list{
+    list-style-type: none;
+}
+
+h3{
+    width: 100%;
+    text-align: center;
+    padding: 0 0 1rem 0;
+    border-bottom: 2px solid;
+}
+/* *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -41,4 +128,4 @@ li {
 
 li>h4 {
     font-weight: bold;
-}
+} */
