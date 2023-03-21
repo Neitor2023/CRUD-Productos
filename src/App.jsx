@@ -4,6 +4,7 @@ import ProductsList from './assets/components/ProductsList';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import ConfDelete from './assets/components/ConfDelete';
+import Removed from './assets/components/Removed';
 
 function App() {
     const [prodUpdate, setProdUpdate] = useState(null)
@@ -11,6 +12,7 @@ function App() {
     const [swForm, setSwForm] = useState(false)
     const [swConfDelete, setSwConfDelete] = useState(false)
     const [prodDele, setProdDele] = useState("")
+    const [removed, setRemoved] = useState(false)
 
     useEffect(() => {
         getData()
@@ -36,7 +38,11 @@ function App() {
     const deleProd = (id) => {
         axios
             .delete(`https://products-crud.academlo.tech/products/${id}/`)
-            .then(() => getData())
+            .then(() => {
+                getData()
+                setRemoved(true)
+            })
+
             .catch(error => console.error(error))
         setProdUpdate(null)
     }
@@ -80,6 +86,12 @@ function App() {
                     prodDele={prodDele}
                     deleProduct={(id, sw) => { deleProd(id), setSwConfDelete(sw) }}
                     cancelDele={sw => setSwConfDelete(sw)}
+                />
+            }
+            {
+                removed &&
+                <Removed
+                cancelRemoved={sw => setRemoved(sw)}
                 />
             }
         </div>

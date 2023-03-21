@@ -13,6 +13,120 @@
 .App{
   width: 100%;
 }
+/* START ProductsList */
+*{
+  width: 100%;
+}
+
+.sumary{
+  border: 1px solid ;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+h1{
+  width: 100%;
+  text-align: center;
+}
+
+h2{
+  width: 100%;
+  text-align: center;
+}
+
+.sumary button{
+  width: 160px;
+  height: 40px;
+  background-color: #565a8a;
+  color: antiquewhite;
+  box-shadow: 0 0 3px 3px gray;
+  border-radius: 5px;
+}
+
+.sumary button:hover{
+  cursor: pointer;
+  background-color: antiquewhite;
+  color: rgb(2, 2, 26);
+}
+
+.card_list{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-evenly;
+  background-color: white;
+  padding: 3rem 0;
+}
+
+.card{
+  width: 220px;
+  height: 200px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  box-shadow: 0 0 3px 3px rgb(206, 206, 206);
+  border-radius: 10px;
+}
+.sub_car{
+  display: flex;
+  flex-direction: row;
+}
+.btn_list{
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.det_list{
+  list-style-type: none;
+}
+.list{
+  list-style-type: none;
+}
+
+h3{
+  width: 100%;
+  text-align: center;
+  padding: 0 0 1rem 0;
+  border-bottom: 2px solid;
+}
+.red{
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 30%;
+  background-color: red;
+  
+}
+/* ProdutsList END*/
+.container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(2, 2, 26,0.606);
+  -webkit-backdrop-filter: blur(2.5px);
+  backdrop-filter:blur(2.5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .container_confDele{
   position: fixed;
@@ -20,8 +134,8 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px);
+  /* -webkit-backdrop-filter: blur(0.1px); */
+  /* backdrop-filter:blur(0.1px); */
   /* background-color: rgba(2, 2, 26, 0.606); */
   background-color: rgb(243, 243, 243,0);
   display: flex;
@@ -42,6 +156,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content:space-around;
+  position: relative;
 }
 
 .dele h4{
@@ -49,7 +164,7 @@
   padding: 2rem;
 }
 
-.dele button{
+.btn_delet{
   width: 100px;
   height: 40px;
   background-color: #565a8a;
@@ -57,14 +172,14 @@
   box-shadow: 0 0 3px 3px gray;
   border-radius: 5px;
 }
-.dele button:hover{
+.btn_delet:hover{
   cursor: pointer;
   background-color: antiquewhite;
   color: rgb(2, 2, 26);
 }
 .form{
   width: 300px;
-  height: 320px;
+  height: 370px;
   background-color: rgb(235, 235, 235);
   border-radius: 10px;
   padding: 2rem;
@@ -82,7 +197,13 @@
 }
 .form input{
   display: block;
-  
+  background-color: rgba(88, 71, 71, 0.411);
+  border-radius: 5px;
+  border: none;
+  height: 20px;
+  text-align: center;
+  margin: .5rem;
+  width: 220px;
 }
 .container_form{
   position: fixed;
@@ -98,7 +219,13 @@
   align-items: center;
   justify-content: center;
  }
-.btn_close{
+ .x{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background-color: rgba(255, 0, 0, 0.192);
+ }
+.btn_close{ 
   width: 25px;
   height: 25px;
   background-color: rgba(255, 0, 0, 0.596);
@@ -113,6 +240,12 @@
   justify-content: center;
   box-shadow: 0 0 3px 3px rgb(206, 206, 206); 
 }
+.x:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+  background-color: rgba(255, 0, 0, 0.192);
+}
+
 .btn_close:hover{
   cursor: pointer;
   transform: scale(1.2);
@@ -120,7 +253,7 @@
 
 .card_form{
   width: 300px;
-  height: 400px;
+  height: 370px;
   padding: 1rem;
   display: flex;
   flex-direction: row;
@@ -139,12 +272,10 @@
 .btn_form{
   width: 80px;
   height: 40px;
-  gap: 3rem;
   background-color: #565a8a;
   color: antiquewhite;
   box-shadow: 0 0 3px 3px gray;
   border-radius: 5px;
-  /* display: flex; */
 }
 
 .btn_form:hover{
