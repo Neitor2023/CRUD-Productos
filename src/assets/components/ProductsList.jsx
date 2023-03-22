@@ -1,5 +1,6 @@
 
 const ProductsList = ({ products, selesctProd, setSwFormListApp, setSwConfDeleListApp }) => {
+    
     const orderedList = products.sort((a, b) => a.name.localeCompare(b.name))
     return (
         <div>

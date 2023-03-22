@@ -13,7 +13,7 @@
 .App{
   width: 100%;
 }
-/* START ProductsList */
+
 *{
   width: 100%;
 }
@@ -71,7 +71,6 @@ h2{
   padding: 1rem;
   display: flex;
   flex-direction: row;
-  /* flex-wrap: wrap; */
   align-items: center;
   justify-content: space-between;
   background-color: white;
@@ -115,6 +114,7 @@ h3{
 }
 /* ProdutsList END*/
 .container{
+ z-index: 100;  
   position: fixed;
   top: 0;
   left: 0;
@@ -126,21 +126,12 @@ h3{
   display: flex;
   align-items: center;
   justify-content: center;
+  clip-path: circle(60px at 50% 0);
+  transition: .7s ease all;
 }
 
-.container_confDele{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  /* -webkit-backdrop-filter: blur(0.1px); */
-  /* backdrop-filter:blur(0.1px); */
-  /* background-color: rgba(2, 2, 26, 0.606); */
-  background-color: rgb(243, 243, 243,0);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.container:hover{
+  clip-path: circle(100% at 50% 0);
 }
 
 .dele{
@@ -205,7 +196,7 @@ h3{
   margin: .5rem;
   width: 220px;
 }
-.container_form{
+.container_formxxxxxxxxxxxx{
   position: fixed;
   top: 0;
   left: 0;
@@ -263,8 +254,6 @@ h3{
   background-color: white;
   box-shadow: 0 0 3px 3px rgb(206, 206, 206);
   border-radius: 10px;
-  /* 
-  */
 }
 .detail_form{
   font-size: 20px;
@@ -284,32 +273,9 @@ h3{
     color: rgb(2, 2, 26);
 }
 .isAvailable_css{
-  /* top: 0; */
-  /* right: 0; */
   text-align: left;
   display: flex;
   flex-direction: left;
-}
-
-/* menu prueba */
-.container-menu{
-  /* background: #396362; */
-  background-color: rgb(2, 2, 26,0.606);
-  -webkit-backdrop-filter: blur(2.5px);
-  backdrop-filter:blur(2.5px);
-  color: #fff;
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  z-index: 100;
-  text-align: center;
-  top: 0;
-  clip-path: circle(60px at 50% 0);
-  transition: .7s ease all;
-}
-
-.container-menu.active{
-  clip-path: circle(100% at 50% 0);
 }
 
 .btn-open-menu{
@@ -347,6 +313,7 @@ h3{
 .container-menu.active li{
   animation: displacement 1s ease;
 }
+
 
 @keyframes displacement{
   from {transform: translateY(1000px);}
