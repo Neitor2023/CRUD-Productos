@@ -293,3 +293,78 @@ h3{
 
 /* menu prueba */
 
+.container-menu{
+  /* background: #396362; */
+  background-color: rgb(2, 2, 26,0.606);
+  -webkit-backdrop-filter: blur(2.5px);
+  backdrop-filter:blur(2.5px);
+  color: #fff;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  text-align: center;
+  top: 0;
+  clip-path: circle(60px at 50% 0);
+  transition: .7s ease all;
+}
+
+.container-menu.active{
+  clip-path: circle(100% at 50% 0);
+}
+
+.btn-open-menu{
+  font-size: 25px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.btn-open-menu:hover{
+  animation: rotar 1.5s alternate;
+}
+
+@keyframes rotar{
+  0% {transform: rotate(0deg);}
+  20% {transform: rotate(10deg);}
+  40% {transform: rotate(-15deg);}
+  60% {transform: rotate(15deg);}
+  80% {transform: rotate(-10deg);}
+  100% {transform: rotate(0deg);}
+}
+
+.navigation-elements{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation-elements li{
+  list-style: none;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.container-menu.active li{
+  animation: displacement 1s ease;
+}
+
+@keyframes displacement{
+  from {transform: translateY(1000px);}
+  to {transform: translateY(0);}
+}
+
+.navigation-elements li a{
+  text-decoration: none;
+  font-size: 40px;
+  letter-spacing: 2px;
+  padding: 15px 30px;
+  color: #f8f8f8;
+  text-transform: uppercase;
+  transition: .2s ease all;
+  border-radius: 10px;
+}
+
+.navigation-elements li a:hover{
+  background: #000;
+}

@@ -26,7 +26,7 @@ const ProductsList = ({ products, selesctProd, setSwFormListApp, setSwConfDeleLi
                                 <div className='btn_list'>
                                     <button onClick={() => setSwConfDeleListApp(true, prod)}>
                                         <div className="red">
-                                            <i className='bx bxs-trash bx-sm'></i>
+                                            <i className='bx bxs-trash bx-sm' Style='color:#f3f2f2' ></i>
                                         </div>
                                     </button>
                                     <button onClick={() => selesctProd(true, products.filter(pro => pro.id == prod.id))}>
