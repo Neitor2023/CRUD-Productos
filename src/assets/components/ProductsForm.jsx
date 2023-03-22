@@ -66,6 +66,7 @@ const ProductsForm = ({ createProduc, selectedProd, updateProd, setSwFormApp }) 
                         name="category"
                         id="category"
                         type="text"
+                        placeholder="Ingrese Categoria"
                         {...register("category", { required: true })}
                     />
                     {errors.category && <p role="alert" style={{ color: "tomato" }}>La Categoria es requerida</p>}
@@ -77,7 +78,7 @@ const ProductsForm = ({ createProduc, selectedProd, updateProd, setSwFormApp }) 
                         id="price"
                         type="number"
                         min="1"
-                        max="100"
+                        max="10000"
                         {...register("price", { required: true })}
                     />
                     {errors.price && <p role="alert" style={{ color: "tomato" }}>El Precio es requerido</p>}
@@ -101,65 +102,3 @@ const ProductsForm = ({ createProduc, selectedProd, updateProd, setSwFormApp }) 
 };
 
 export default ProductsForm;
-
-{/* <div>
-<form onSubmit={handleSubmit(submit)}>
-    <div className='container_form'>
-        <div className="card_form">
-            <button className="btn_close" onClick={() => setSwFormApp(false)}>X</button>
-            <div className="detail_form">
-                <div>
-                    <label htmlFor="name">Nombre del producto : </label>
-                    <input
-                        name="name"
-                        id="name"
-                        type="text"
-                        placeholder="Ingrese Nombre del producto"
-                        {...register("name", { required: true })}
-                    />
-                    {errors.name && <p role="alert" style={{ color: "tomato" }}>El nombre del producto es requerido</p>}
-                </div>
-                <br />
-                <div>
-                    <label htmlFor="category">Categoria : </label>
-                    <input
-                        name="category"
-                        id="category"
-                        type="text"
-                        {...register("category", { required: true })}
-                    />
-                    {errors.category && <p role="alert" style={{ color: "tomato" }}>La Categoria es requerida</p>}
-                </div>
-                <br />
-                <div>
-                    <label htmlFor="price">Precio : </label>
-                    <input
-                        name="price"
-                        id="price"
-                        type="number"
-                        min="1"
-                        max="100"
-                        {...register("price", { required: true })}
-                    />
-                    {errors.price && <p role="alert" style={{ color: "tomato" }}>El Precio es requerido</p>}
-                </div>
-                <br />
-                <div className="isAvailable_css">
-                    <label htmlFor="isAvailable">Disponibilidad : </label>
-                    <input
-                        name="isAvailable"
-                        id="isAvailable"
-                        type="checkbox"
-                        {...register("isAvailable")}
-                    />
-                </div>
-            </div>
-            <div className="btn_form">
-                <button type="submit">
-                    Enviar
-                </button>
-            </div>
-        </div>
-    </div>
-</form>
-</div> */}

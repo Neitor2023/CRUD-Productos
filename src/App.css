@@ -114,7 +114,7 @@ h3{
 }
 /* ProdutsList END*/
 .container{
- z-index: 100;  
+  z-index: 100;  
   position: fixed;
   top: 0;
   left: 0;
@@ -126,23 +126,18 @@ h3{
   display: flex;
   align-items: center;
   justify-content: center;
-  /* clip-path: circle(60px at 50% 0); */
-  /* transition: .7s ease all; */
-  /* animation: grow 1s ease; */
+  transition: .7s ease all;
+  animation: grow 1s ease;
 }
 
 @keyframes grow{
-  from {clip-path: circle(60px at 50% 0);}
+  from {clip-path: circle(0px at 50% 0);}
   to {clip-path: circle(100% at 50% 0)}
 }
 
-.containerx:hover{
-  clip-path: circle(100% at 50% 0);
-}
-
 .dele{
-  width: 300px;
-  height: 260px;
+  width: 320px;
+  height: 300px;
   background-color: rgb(235, 235, 235);
   border-radius: 10px;
   padding: 2rem;
@@ -175,8 +170,8 @@ h3{
   color: rgb(2, 2, 26);
 }
 .form{
-  width: 300px;
-  height: 370px;
+  width: 370px;
+  height: 400px;
   background-color: rgb(235, 235, 235);
   border-radius: 10px;
   padding: 2rem;
@@ -197,31 +192,20 @@ h3{
   background-color: rgba(88, 71, 71, 0.411);
   border-radius: 5px;
   border: none;
-  height: 20px;
+  height: 28px;
   text-align: center;
   margin: .5rem;
-  width: 220px;
+  width: 100%;
+  font-size:larger ;
 }
-.container_formxxxxxxxxxxxx{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px);
-  /* background-color: rgba(2, 2, 26, 0.606); */
-  background-color: rgb(243, 243, 243,0);
-  display: flex;
-  align-items: center;
-  justify-content: center;
- }
- .x{
+
+.x{
   align-items: center;
   justify-content: center;
   display: flex;
   background-color: rgba(255, 0, 0, 0.192);
- }
+}
+
 .btn_close{ 
   width: 25px;
   height: 25px;
@@ -237,6 +221,7 @@ h3{
   justify-content: center;
   box-shadow: 0 0 3px 3px rgb(206, 206, 206); 
 }
+
 .x:hover{
   cursor: pointer;
   transform: scale(1.2);
@@ -261,9 +246,11 @@ h3{
   box-shadow: 0 0 3px 3px rgb(206, 206, 206);
   border-radius: 10px;
 }
+
 .detail_form{
   font-size: 20px;
 }
+
 .btn_form{
   width: 80px;
   height: 40px;
@@ -278,65 +265,9 @@ h3{
     background-color: antiquewhite;
     color: rgb(2, 2, 26);
 }
+
 .isAvailable_css{
   text-align: left;
   display: flex;
   flex-direction: left;
-}
-
-.btn-open-menu{
-  font-size: 25px;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.btn-open-menu:hover{
-  animation: rotar 1.5s alternate;
-}
-
-@keyframes rotar{
-  0% {transform: rotate(0deg);}
-  20% {transform: rotate(10deg);}
-  40% {transform: rotate(-15deg);}
-  60% {transform: rotate(15deg);}
-  80% {transform: rotate(-10deg);}
-  100% {transform: rotate(0deg);}
-}
-
-.navigation-elements{
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.navigation-elements li{
-  list-style: none;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-}
-
-.container-menu.active li{
-  animation: displacement 1s ease;
-}
-
-
-@keyframes displacement{
-  from {transform: translateY(1000px);}
-  to {transform: translateY(0);}
-}
-
-.navigation-elements li a{
-  text-decoration: none;
-  font-size: 40px;
-  letter-spacing: 2px;
-  padding: 15px 30px;
-  color: #f8f8f8;
-  text-transform: uppercase;
-  transition: .2s ease all;
-  border-radius: 10px;
-}
-
-.navigation-elements li a:hover{
-  background: #000;
 }

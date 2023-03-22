@@ -13,6 +13,8 @@ function App() {
     const [swConfDelete, setSwConfDelete] = useState(false)
     const [prodDele, setProdDele] = useState("")
     const [removed, setRemoved] = useState(false)
+    const [removeData, setRemoveData] = useState({})
+    
 
     useEffect(() => {
         getData()
@@ -35,14 +37,14 @@ function App() {
     }
 
     // DELETE
-    const deleProd = (id) => {
+    const deleProd = (data) => {
         axios
-            .delete(`https://products-crud.academlo.tech/products/${id}/`)
+            .delete(`https://products-crud.academlo.tech/products/${data.id}/`)
             .then(() => {
                 getData()
                 setRemoved(true)
+                setRemoveData(data)
             })
-
             .catch(error => console.error(error))
         setProdUpdate(null)
     }
@@ -84,13 +86,14 @@ function App() {
                 swConfDelete &&
                 <ConfDelete
                     prodDele={prodDele}
-                    deleProduct={(id, sw) => { deleProd(id), setSwConfDelete(sw) }}
+                    deleProduct={(data, sw) => { deleProd(data), setSwConfDelete(sw) }}
                     cancelDele={sw => setSwConfDelete(sw)}
                 />
             }
             {
                 removed &&
                 <Removed
+                removeData={removeData}
                 cancelRemoved={sw => setRemoved(sw)}
                 />
             }
