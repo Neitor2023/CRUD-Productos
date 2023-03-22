@@ -126,11 +126,17 @@ h3{
   display: flex;
   align-items: center;
   justify-content: center;
-  clip-path: circle(60px at 50% 0);
-  transition: .7s ease all;
+  /* clip-path: circle(60px at 50% 0); */
+  /* transition: .7s ease all; */
+  /* animation: grow 1s ease; */
 }
 
-.container:hover{
+@keyframes grow{
+  from {clip-path: circle(60px at 50% 0);}
+  to {clip-path: circle(100% at 50% 0)}
+}
+
+.containerx:hover{
   clip-path: circle(100% at 50% 0);
 }
 
