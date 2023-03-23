@@ -4,9 +4,9 @@ const ProductsList = ({ products, selesctProd, setSwFormListApp, setSwConfDeleLi
     return (
         <div>
             <div className='sumary'>
-                <h1>Listado de Productos</h1>
+                <h1>LISTADO DE PRODUCTOS</h1>
                 <h2><strong>Productos Registrados: </strong>{products.length}</h2>
-                <button onClick={() => setSwFormListApp(true)}> <strong>+</strong> Nuevo Producto</button>
+                <button onClick={() => setSwFormListApp(true)}> <strong>+</strong> NUEVO PRODUCTO</button>
             </div>
             <div className='card_list'>
                 {orderedList.map(prod => (

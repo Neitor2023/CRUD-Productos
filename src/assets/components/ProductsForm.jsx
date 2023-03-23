@@ -45,7 +45,7 @@ const ProductsForm = ({ createProduc, selectedProd, updateProd, setSwFormApp }) 
     return (
         <div className='container'>
             <div className="form">
-                <button className="btn_close" onClick={() => setSwFormApp(false)}>X</button>
+                <button className="btn_close" onClick={() => setSwFormApp(false)}><strong className='x'>X</strong></button>
                 <form onSubmit={handleSubmit(submit)}>
                     <h3>Formulario</h3><br />
                     <div className="label">

@@ -51,7 +51,11 @@ button{
   border-radius: 12px;
 }
 
-xbutton::before{
+button:hover{
+  background: #565a8a;
+}
+
+button::before{
   content: '';
   position: absolute;
   top: 0;
@@ -59,7 +63,8 @@ xbutton::before{
   z-index: -1;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, red, blue, deeppink, blue, red, blue, deeppink, blue);
+  /* background: linear-gradient(45deg, red, blue, deeppink, blue, red, blue, deeppink, blue); */
+  background: linear-gradient(45deg, blue, red, blue, red, blue, red, blue);
   background-size: 800%;
   border-radius: 10px;
   filter: blur(8px);
@@ -78,20 +83,10 @@ xbutton::before{
   }
 }
 
-.xsumary button{
+.sumary button{
   width: 270px;
-  /* height: 40px; */
-  /* background-color: #565a8a; */
-  /* color: antiquewhite; */
-  /* box-shadow: 0 0 3px 3px gray; */
-  /* border-radius: 5px; */
 }
 
-.button:hover{
-  /* cursor: pointer; */
-  background: antiquewhite;
-  color: rgb(2, 2, 26);
-}
 
 .card_list{
   width: 100%;
@@ -147,6 +142,13 @@ h3{
 .btn_edit{
   background: none;
 }
+.btn_trash:hover{
+  background: none;
+}
+.btn_edit:hover{
+  background: none;
+}
+
 .edit{
   width: 30px;
   height: 30px;
@@ -260,6 +262,12 @@ h3{
   background-color: rgba(255, 0, 0, 0.192);
 }
 
+.x:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+  background-color: rgba(255, 0, 0, 0.192);
+}
+
 .btn_close{ 
   width: 25px;
   height: 25px;
@@ -276,15 +284,10 @@ h3{
   box-shadow: 0 0 3px 3px rgb(206, 206, 206); 
 }
 
-.x:hover{
-  cursor: pointer;
-  transform: scale(1.2);
-  background-color: rgba(255, 0, 0, 0.192);
-}
-
 .btn_close:hover{
   cursor: pointer;
-  transform: scale(1.2);
+  transform: scale(2);
+  background-color: rgba(255, 0, 0, 0.192);
 }
 
 .card_form{
