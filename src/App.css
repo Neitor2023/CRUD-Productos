@@ -68,10 +68,10 @@ button::before{
   background-size: 800%;
   border-radius: 10px;
   filter: blur(8px);
-  animation: btn_Effect 20s linear infinity;
+  animation: btnEffect 20s linear infinite;
 }
 
-@keyframes btn_Effect{
+@keyframes btnEffect{
   0% {
     background-position: 0 0;
   }
