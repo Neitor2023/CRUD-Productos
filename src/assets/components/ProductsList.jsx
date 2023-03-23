@@ -23,14 +23,16 @@ const ProductsList = ({ products, selesctProd, setSwFormListApp, setSwConfDeleLi
                                         </li>
                                     </ul>
                                 </div>
-                                <div className='btn_list'>
-                                    <button onClick={() => setSwConfDeleListApp(true, prod)}>
+                                <div>
+                                    <button className="btn_trash" onClick={() => setSwConfDeleListApp(true, prod)}>
                                         <div className="red">
-                                            <i className='bx bxs-trash bx-sm' Style='color:#f3f2f2' ></i>
+                                            <i className='bx bxs-trash bx-sm'></i>
                                         </div>
                                     </button>
-                                    <button onClick={() => selesctProd(true, products.filter(pro => pro.id == prod.id))}>
+                                    <button className="btn_edit" onClick={() => selesctProd(true, products.filter(pro => pro.id == prod.id))}>
+                                        <div className="edit">
                                         <i className='bx bxs-edit-alt bx-sm' ></i>
+                                        </div>
                                     </button>
                                 </div>
                             </div>

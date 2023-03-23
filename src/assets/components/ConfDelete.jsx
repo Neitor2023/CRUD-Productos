@@ -7,7 +7,7 @@ const ConfDelete = ({ prodDele, cancelDele, deleProduct }) => {
                 <h2>DESEAS ELIMINAR ?</h2><br />
                 <h3>{prodDele.name}, {prodDele.category} </h3>
                 <h3>Esta operación es irreversible</h3>
-                <button className="btn_delet" onClick={() => deleProduct(prodDele, false)} >Eliminar</button>
+                <button onClick={() => deleProduct(prodDele, false)} >Eliminar</button>
                 <button className="btn_close" onClick={() => cancelDele(false)} ><strong className='x'>X</strong></button>
             </div>
         </div>

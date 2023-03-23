@@ -39,18 +39,57 @@ h2{
   text-align: center;
 }
 
-.sumary button{
-  width: 160px;
-  height: 40px;
-  background-color: #565a8a;
-  color: antiquewhite;
-  box-shadow: 0 0 3px 3px gray;
-  border-radius: 5px;
+button{
+  background: black;
+  cursor: pointer;
+  border: none;
+  padding: 16px 32px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  border-radius: 12px;
 }
 
-.sumary button:hover{
-  cursor: pointer;
-  background-color: antiquewhite;
+xbutton::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, red, blue, deeppink, blue, red, blue, deeppink, blue);
+  background-size: 800%;
+  border-radius: 10px;
+  filter: blur(8px);
+  animation: btn_Effect 20s linear infinity;
+}
+
+@keyframes btn_Effect{
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.xsumary button{
+  width: 270px;
+  /* height: 40px; */
+  /* background-color: #565a8a; */
+  /* color: antiquewhite; */
+  /* box-shadow: 0 0 3px 3px gray; */
+  /* border-radius: 5px; */
+}
+
+.button:hover{
+  /* cursor: pointer; */
+  background: antiquewhite;
   color: rgb(2, 2, 26);
 }
 
@@ -102,6 +141,22 @@ h3{
   padding: 0 0 1rem 0;
   border-bottom: 2px solid;
 }
+.btn_trash{
+  background: none;
+}
+.btn_edit{
+  background: none;
+}
+.edit{
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 30%;
+  background: #565a8a;
+}
+
 .red{
   width: 30px;
   height: 30px;
@@ -110,7 +165,6 @@ h3{
   display: flex;
   border-radius: 30%;
   background-color: red;
-  
 }
 /* ProdutsList END*/
 .container{
@@ -251,7 +305,7 @@ h3{
   font-size: 20px;
 }
 
-.btn_form{
+.xbtn_form{
   width: 80px;
   height: 40px;
   background-color: #565a8a;
@@ -260,7 +314,7 @@ h3{
   border-radius: 5px;
 }
 
-.btn_form:hover{
+.xbtn_form:hover{
     cursor: pointer;
     background-color: antiquewhite;
     color: rgb(2, 2, 26);

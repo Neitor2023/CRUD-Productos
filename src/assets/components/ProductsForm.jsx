@@ -92,7 +92,7 @@ const ProductsForm = ({ createProduc, selectedProd, updateProd, setSwFormApp }) 
                         />
                     </div>
                     <br />
-                    <button className="btn_form" type="submit">
+                    <button type="submit">
                         Enviar
                     </button>
                 </form>
